@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Особенное послание для Софы 🌸</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Marck+Script&family=Nunito:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Canvas Background: Lanterns & Silver Butterflies -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Ambient Audio Controls -->
+  <div class="top-controls">
+    <button id="music-toggle-btn" class="glass-pill-btn" aria-label="Фоновая музыка" title="Включить нежную мелодию">
+      <span class="btn-icon">🎵</span>
+      <span class="btn-label">Музыка: Выкл</span>
+    </button>
+  </div>
+
+  <!-- Main Container -->
+  <main class="invitation-container">
+    
+    <!-- STEP 1: SEALED ENVELOPE -->
+    <section id="step-envelope" class="card-step active">
+      <div class="envelope-wrapper">
+        <div class="clouds-decor top-cloud"></div>
+        <div class="red-ribbon-decor"></div>
+        
+        <div class="envelope-card">
+          <div class="tgcf-lantern-badge">🏮 3000 фонарей зажжены</div>
+          <div class="butterfly-crest">🦋</div>
+          
+          <h1 class="main-title cursive">Тайное послание для Софы</h1>
+          <p class="subtitle">Перевязано красной нитью судьбы котиком Торо Иноуэ</p>
+
+          <div class="toro-preview-frame">
+            <img src="images/toro_roses_run.gif" alt="Котик Торо Иноуэ" class="toro-avatar pulse-glow">
+          </div>
+
+          <!-- Ancient Sealed Scroll Component -->
+          <div class="ancient-scroll-sealed" id="sealed-scroll-preview" tabindex="0" role="button" aria-label="Распечатать свиток Небожителей" title="Нажми, чтобы распечатать свиток!">
+            <div class="scroll-glow-aura"></div>
+            
+            <!-- Left Roller Rod Finial -->
+            <div class="scroll-finial left-finial">
+              <div class="finial-gold"></div>
+              <div class="finial-wood"></div>
+              <div class="tassel-mini"></div>
+            </div>
+
+            <!-- Rolled Parchment Cylinder -->
+            <div class="scroll-cylinder">
+              <div class="cylinder-paper-texture"></div>
+              <div class="cylinder-edge-gold top"></div>
+              <div class="cylinder-edge-gold bottom"></div>
+              
+              <!-- Red Fate Ribbon & Wax Seal -->
+              <div class="red-fate-ribbon">
+                <div class="ribbon-band"></div>
+                <div class="ribbon-tail tail-left"></div>
+                <div class="ribbon-tail tail-right"></div>
+                <div class="wax-seal">
+                  <div class="wax-seal-inner">
+                    <span class="seal-crest">🦋</span>
+                  </div>
+                  <div class="seal-sparkle s1">✨</div>
+                  <div class="seal-sparkle s2">✨</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Roller Rod Finial -->
+            <div class="scroll-finial right-finial">
+              <div class="finial-wood"></div>
+              <div class="finial-gold"></div>
+              <div class="tassel-mini"></div>
+            </div>
+          </div>
+
+          <div class="scroll-tap-hint">✨ Нажми на свиток или кнопку ниже ✨</div>
+
+          <p class="sealed-hint">Тебя ждёт кое-что очень важное... Распечатаешь?</p>
+
+          <button id="open-envelope-btn" class="primary-magic-btn">
+            <span class="btn-shine"></span>
+            <span class="btn-text">Распечатать свиток 💌</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2: THE INVITATION QUESTION -->
+    <section id="step-question" class="card-step">
+      <div class="scroll-card">
+        <!-- Decorative Scroll Top Roller Rod -->
+        <div class="hanging-scroll-rod rod-top">
+          <div class="hanging-cord"></div>
+          <div class="finial left"><div class="gold-cap"></div></div>
+          <div class="wood-bar"></div>
+          <div class="finial right"><div class="gold-cap"></div></div>
+        </div>
+        <div class="scroll-brocade brocade-top"></div>
+
+        <!-- The unrolling text content body -->
+        <div class="scroll-unroll-body">
+          <div class="scroll-header-cute">
+            <div class="tgcf-lantern-badge">🏮 Для прекрасной небожительницы 🌸</div>
+          </div>
+
+          <div class="character-showcase">
+            <div class="image-wrapper">
+              <img id="toro-interactive-img" src="images/toro_hero.gif" alt="Котик Торо Иноуэ" class="interactive-img">
+              <div id="butterfly-perched" class="butterfly-sparkle">✨🦋</div>
+            </div>
+            <div id="toro-speech-bubble" class="speech-bubble">
+              Софа, в лунном свете этого вечера у меня есть к тебе один вопрос... 🌸
+            </div>
+          </div>
+
+          <div class="quote-box">
+            <p class="tgcf-quote">
+              «Для меня единственный смысл твоего существования — это ты сама. Если ты не знаешь, ради чего жить, живи ради меня...»
+            </p>
+            <span class="quote-author">— Благословение небожителей 🦋</span>
+          </div>
+
+          <h2 class="invite-heading">Пойдёшь со мной на свидание? 🐾</h2>
+
+          <div class="choice-buttons-cluster">
+            <button id="btn-yes" class="answer-btn yes-btn">
+              <span class="btn-emoji">💖</span>
+              <span>Да, конечно!</span>
+            </button>
+
+            <button id="btn-maybe" class="answer-btn maybe-btn">
+              <span class="btn-emoji">🥺</span>
+              <span>Подумаю...</span>
+            </button>
+          </div>
+
+          <div id="maybe-reaction" class="maybe-reaction hidden">
+            <p class="reaction-text">Торо прижал ушки и смотрит прямо в сердце... Ты же не сможешь отказать? 🥺👉👈</p>
+          </div>
+        </div>
+
+        <div class="scroll-brocade brocade-bottom"></div>
+        <div class="hanging-scroll-rod rod-bottom">
+          <div class="finial left">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+          <div class="wood-bar"></div>
+          <div class="finial right">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: DATE & TIME SELECTION -->
+    <section id="step-datetime" class="card-step">
+      <div class="scroll-card">
+        <div class="hanging-scroll-rod rod-top">
+          <div class="hanging-cord"></div>
+          <div class="finial left"><div class="gold-cap"></div></div>
+          <div class="wood-bar"></div>
+          <div class="finial right"><div class="gold-cap"></div></div>
+        </div>
+        <div class="scroll-brocade brocade-top"></div>
+
+        <div class="step-indicator">Шаг 1 из 3 🌸</div>
+        <h2 class="step-title">Когда мы встретимся? 🏮</h2>
+        <p class="step-desc">Выбери день и самое удобное для тебя время</p>
+
+        <!-- Date Picker Section -->
+        <div class="form-block">
+          <label class="form-label" for="date-input">
+            <span class="label-icon">📅</span> Выбери дату:
+          </label>
+          <div class="input-with-icon">
+            <input type="date" id="date-input" class="magic-input" required>
+          </div>
+
+          <div class="quick-chips" id="quick-date-chips">
+            <button type="button" class="chip-btn" data-days="0">Сегодня ✨</button>
+            <button type="button" class="chip-btn" data-days="1">Завтра 🌙</button>
+            <button type="button" class="chip-btn" data-days="friday">В пятницу 🏮</button>
+            <button type="button" class="chip-btn" data-days="saturday">В субботу 🌸</button>
+          </div>
+        </div>
+
+        <!-- Time Picker Section -->
+        <div class="form-block">
+          <label class="form-label">
+            <span class="label-icon">⏰</span> Удобное время:
+          </label>
+          <div class="time-presets" id="time-presets">
+            <button type="button" class="time-chip" data-time="17:00">17:00 🌇</button>
+            <button type="button" class="time-chip" data-time="18:30">18:30 🍜</button>
+            <button type="button" class="time-chip active" data-time="19:00">19:00 🥢</button>
+            <button type="button" class="time-chip" data-time="20:00">20:00 🏮</button>
+          </div>
+          
+          <div class="custom-time-row">
+            <label for="custom-time-input" class="sub-label">Или точное время:</label>
+            <input type="time" id="custom-time-input" class="magic-input time-mini" value="19:00">
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <button id="btn-back-to-question" class="back-btn">← Назад</button>
+          <button id="btn-next-to-location" class="primary-magic-btn">
+            <span>Выбрать место →</span>
+          </button>
+        </div>
+
+        <div class="scroll-brocade brocade-bottom"></div>
+        <div class="hanging-scroll-rod rod-bottom">
+          <div class="finial left">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+          <div class="wood-bar"></div>
+          <div class="finial right">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: LOCATION SELECTION (Andy Woo vs Custom) -->
+    <section id="step-location" class="card-step">
+      <div class="scroll-card">
+        <div class="hanging-scroll-rod rod-top">
+          <div class="hanging-cord"></div>
+          <div class="finial left"><div class="gold-cap"></div></div>
+          <div class="wood-bar"></div>
+          <div class="finial right"><div class="gold-cap"></div></div>
+        </div>
+        <div class="scroll-brocade brocade-top"></div>
+        <div class="step-indicator">Шаг 2 из 3 🥢</div>
+        <h2 class="step-title">Куда мы пойдём? 🏮</h2>
+        <p class="step-desc">У меня есть идеальный план, но выбор всегда за тобой!</p>
+
+        <div class="location-cards-grid">
+          
+          <!-- Option 1: Restaurant Andy Woo -->
+          <div class="location-card selected" id="option-andy-woo" tabindex="0">
+            <div class="location-badge">❤️ Главный выбор</div>
+            <div class="location-img-wrap">
+              <img src="images/toro_restaurant.gif" alt="Ресторан Andy Woo с Торо" class="location-img">
+            </div>
+            <div class="location-content">
+              <h3 class="location-name">Ресторан «Andy Woo» 🥢</h3>
+              <p class="location-tagline">Азиатская эстетика, безумно вкусная кухня и тёплый свет фонарей</p>
+              <div class="location-perks">
+                <span>🥟 Димсамы и бао</span>
+                <span>🍜 Невероятная лапша</span>
+                <span>🍵 Чайные церемонии</span>
+              </div>
+              <div class="toro-seal">🐾 Выбор Торо Иноуэ</div>
+            </div>
+          </div>
+
+          <!-- Option 2: Custom Place Input -->
+          <div class="location-card" id="option-custom-place" tabindex="0">
+            <div class="location-badge secondary">✨ Твой вариант</div>
+            <div class="custom-place-icon">⛩️</div>
+            <div class="location-content">
+              <h3 class="location-name">Особенное секретное место</h3>
+              <p class="location-tagline">Если тебе сегодня хочется чего-то другого — напиши любое своё желание!</p>
+              
+              <div class="custom-place-form" id="custom-place-form-container">
+                <input type="text" id="custom-place-input" class="magic-input" placeholder="Например: прогулка в парке, кофейня, суши...">
+                <p class="input-hint">Я с огромной радостью поддержу твою идею! 🌸</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="nav-actions">
+          <button id="btn-back-to-datetime" class="back-btn">← Назад к дате</button>
+          <button id="btn-next-to-wishes" class="primary-magic-btn">
+            <span>Маленькие капризы →</span>
+          </button>
+        </div>
+
+        <div class="scroll-brocade brocade-bottom"></div>
+7        <div class="hanging-scroll-rod rod-bottom">
+          <div class="finial left">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+          <div class="wood-bar"></div>
+          <div class="finial right">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 5: CUTE WISHES -->
+    <section id="step-wishes" class="card-step">
+      <div class="scroll-card">
+        <div class="hanging-scroll-rod rod-top">
+          <div class="hanging-cord"></div>
+          <div class="finial left"><div class="gold-cap"></div></div>
+          <div class="wood-bar"></div>
+          <div class="finial right"><div class="gold-cap"></div></div>
+        </div>
+        <div class="scroll-brocade brocade-top"></div>
+
+        <div class="step-indicator">Шаг 3 из 3 ✨</div>
+        <h2 class="step-title">Маленькие капризы для свидания 🌸</h2>
+        <p class="step-desc">Отметь то, что сделает этот вечер идеальным для тебя:</p>
+
+        <div class="wishes-grid">
+          <label class="wish-item">
+            <input type="checkbox" name="wish" value="Вкусный десерт 🍡" checked>
+            <span class="wish-box"></span>
+            <span class="wish-text">Вкусный десерт обязательно 🍡</span>
+          </label>
+
+          <label class="wish-item">
+            <input type="checkbox" name="wish" value="Держаться за руки всю дорогу 🤝" checked>
+            <span class="wish-box"></span>
+            <span class="wish-text">Держаться за руки всю дорогу 🤝</span>
+          </label>
+
+          <label class="wish-item">
+            <input type="checkbox" name="wish" value="Сделать милые фото на память 📸">
+            <span class="wish-box"></span>
+            <span class="wish-text">Сделать милые фото на память 📸</span>
+          </label>
+
+          <label class="wish-item">
+            <input type="checkbox" name="wish" value="Ты выбираешь все вкусности для нас 🍜">
+            <span class="wish-box"></span>
+            <span class="wish-text">Ты выбираешь все блюда за нас двоих 🍜</span>
+          </label>
+
+          <label class="wish-item">
+            <input type="checkbox" name="wish" value="Много-много тёплых обнимашек 🤗" checked>
+            <span class="wish-box"></span>
+            <span class="wish-text">Много-много тёплых обнимашек 🤗</span>
+          </label>
+        </div>
+
+        <div class="form-block mt-3">
+          <label class="form-label" for="custom-wish-text">
+            <span>💌</span> Твоё личное пожелание или записка для меня:
+          </label>
+          <textarea id="custom-wish-text" class="magic-textarea" rows="2" placeholder="Напиши сюда всё, что угодно..."></textarea>
+        </div>
+
+        <div class="nav-actions">
+          <button id="btn-back-to-location" class="back-btn">← Назад к месту</button>
+          <button id="btn-create-ticket" class="primary-magic-btn highlight">
+            <span>Оформить свиток свидания! 📜💖</span>
+          </button>
+        </div>
+
+        <div class="scroll-brocade brocade-bottom"></div>
+        <div class="hanging-scroll-rod rod-bottom">
+          <div class="finial left">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+          <div class="wood-bar"></div>
+          <div class="finial right">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 6: FINAL CELEBRATION & TICKET -->
+    <section id="step-ticket" class="card-step">
+      <div class="scroll-card parchment-theme" id="ticket-capture-area">
+        <div class="hanging-scroll-rod rod-top">
+          <div class="hanging-cord"></div>
+          <div class="finial left"><div class="gold-cap"></div></div>
+          <div class="wood-bar"></div>
+          <div class="finial right"><div class="gold-cap"></div></div>
+        </div>
+        <div class="scroll-brocade brocade-top"></div>
+        
+        <div class="ticket-header-ribbon">
+          <div class="silver-butterfly-left">🦋</div>
+          <span class="ticket-status-badge">✨ Свидание подтверждено! ✨</span>
+          <div class="silver-butterfly-right">🦋</div>
+        </div>
+
+        <div class="ticket-seal-box">
+          <img src="images/toro_ticket.gif" alt="Печать Торо Иноуэ" class="ticket-toro-stamp">
+          <div class="red-fate-knot"></div>
+        </div>
+
+        <h2 class="ticket-main-title cursive">Билет судьбы для Софы 🌸</h2>
+        <p class="ticket-tgcf-blessing">«Тело пребывает в бренном мире, но сердце — в небесах»</p>
+
+        <!-- Summary Details -->
+        <div class="summary-sheet">
+          <div class="summary-row">
+            <span class="summary-key">👑 Для кого:</span>
+            <span class="summary-val highlight-name" id="sum-name">Прекрасная Софа</span>
+          </div>
+
+          <div class="summary-row">
+            <span class="summary-key">📅 Дата:</span>
+            <span class="summary-val" id="sum-date">—</span>
+          </div>
+
+          <div class="summary-row">
+            <span class="summary-key">⏰ Время:</span>
+            <span class="summary-val" id="sum-time">—</span>
+          </div>
+
+          <div class="summary-row">
+            <span class="summary-key">📍 Место встречи:</span>
+            <span class="summary-val" id="sum-location">Ресторан Andy Woo</span>
+          </div>
+
+          <div class="summary-row" id="sum-wishes-row">
+            <span class="summary-key">✨ Пожелания:</span>
+            <span class="summary-val" id="sum-wishes">—</span>
+          </div>
+        </div>
+
+        <div class="ticket-footer-quote">
+          <p>🏮 Для тебя в этот вечер зажгутся три тысячи фонарей!</p>
+        </div>
+
+        <!-- Buttons to Send to Telegram -->
+        <div class="ticket-actions">
+          <a id="btn-send-tg" href="#" target="_blank" class="tg-send-btn">
+            <span class="tg-icon">✈️</span>
+            <span class="tg-btn-label">Отправить ответ в Telegram 💌</span>
+          </a>
+
+          <div class="secondary-actions-row">
+            <button id="btn-copy-ticket" class="glass-sub-btn">
+              <span>📋 Скопировать текст</span>
+            </button>
+            <button id="btn-launch-fireworks" class="glass-sub-btn">
+              <span>🎆 Запустить салют</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="copy-toast" class="toast-message hidden">
+          Скопировано в буфер обмена! Отправь мне в чат 💖
+        </div>
+
+        <div class="scroll-brocade brocade-bottom"></div>
+        <div class="hanging-scroll-rod rod-bottom">
+          <div class="finial left">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+          <div class="wood-bar"></div>
+          <div class="finial right">
+            <div class="gold-cap"></div>
+            <div class="silk-tassel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Audio Synthesis / BGM helper script -->
+  <script src="script.js"></script>
+</body>
+</html>
